@@ -1,7 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowDownToLine, ArrowLeft, ArrowRight } from "lucide-react";
 import { EditorialPage, SectionLabel } from "@/components/editorial-page";
 import { researchPillars, researchPillarBySlug } from "@/lib/research-content";
+import { bookBlueprints } from "@/lib/book-blueprints";
 
 export const Route = createFileRoute("/onderzoek/$slug")({
   loader: ({ params }) => { const pillar = researchPillarBySlug(params.slug); if (!pillar) throw notFound(); return pillar; },
