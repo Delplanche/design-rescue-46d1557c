@@ -8,3 +8,6 @@
 - [x] Speculatieve uitstervingskaders volledig uit site en Boek IV verwijderen
 - [x] De zeven PDF’s opnieuw genereren en inhoudelijk controleren
 - [x] Downloadroute, mobiele weergave en registers controleren
+- [ ] Onderzoekseditie 4.0: 7 hoofdstukken als leesomgeving met vaste zijbalk
+- [ ] Bronregister W01–W26 als doorzoekbare tabel
+- [ ] Nieuw geüploade PDF-versies vergelijken en beste versie koppelen
