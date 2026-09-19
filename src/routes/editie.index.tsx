@@ -42,9 +42,17 @@ function EditionIndex() {
 
       <dl className="mt-12 grid gap-px border border-zinc-800 bg-zinc-800 sm:grid-cols-3">
         {[
-          ["Delen", "7"],
-          ["Geverifieerde bronnen", String(sourceRegistry.length)},
-        ].map(() => null)}
+          ["Delen", String(dossierChapters.length)],
+          ["Bronregister", `${sourceRegistry.length} items`],
+          ["Broncontrole", editionDate],
+        ].map(([label, value]) => (
+          <div key={label} className="bg-zinc-950 px-5 py-6">
+            <dt className="font-mono text-[0.64rem] uppercase tracking-[0.2em] text-zinc-600">
+              {label}
+            </dt>
+            <dd className="mt-2 font-serif text-2xl text-zinc-100">{value}</dd>
+          </div>
+        ))}
       </dl>
 
       <ol className="mt-16 space-y-px border-y border-zinc-800">
