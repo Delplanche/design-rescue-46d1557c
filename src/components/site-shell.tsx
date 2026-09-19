@@ -2,11 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
-
-const navigation = [
-  ["Manifest", "/"], ["Onderzoek", "/onderzoek"],
-  ["Bibliotheek", "/archief"], ["Juridisch", "/juridisch"],
-] as const;
+import { researchPillars } from "@/lib/research-content";
 
 export function SiteShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -17,12 +13,30 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <span>De Marktplaats</span><span>van de Ziel</span>
         </Link>
         <nav className="desktop-nav" aria-label="Hoofdnavigatie">
-          {navigation.map(([label,to])=><Link key={to} to={to} className="nav-link" activeOptions={{exact:to==="/"}}>{label}</Link>)}
+          <Link to="/" className="nav-link" activeOptions={{ exact: true }}>Manifest</Link>
+          <div className="nav-group">
+            <Link to="/onderzoek" className="nav-link">Onderzoek</Link>
+            <div className="nav-panel" role="menu">
+              {researchPillars.map((pillar) => (
+                <Link key={pillar.slug} to="/onderzoek/$slug" params={{ slug: pillar.slug }} role="menuitem">
+                  <code>{pillar.number}</code><span>{pillar.title}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+          <Link to="/archief" className="nav-link nav-link-accent">Bibliotheek / Archief</Link>
         </nav>
         <Button variant="ghost" size="icon" className="menu-button" onClick={() => setOpen(!open)} aria-label={open ? "Menu sluiten" : "Menu openen"}>{open ? <X/> : <Menu/>}</Button>
       </div>
       {open && <nav className="mobile-nav" aria-label="Mobiele navigatie">
-        {navigation.map(([label,to])=><Link key={to} to={to} onClick={() => setOpen(false)}>{label}</Link>)}
+        <Link to="/" onClick={() => setOpen(false)}>Manifest</Link>
+        <Link to="/onderzoek" onClick={() => setOpen(false)}>Onderzoek</Link>
+        {researchPillars.map((pillar) => (
+          <Link key={pillar.slug} to="/onderzoek/$slug" params={{ slug: pillar.slug }} onClick={() => setOpen(false)} className="mobile-sub">
+            <code>{pillar.number}</code> {pillar.title}
+          </Link>
+        ))}
+        <Link to="/archief" onClick={() => setOpen(false)}>Bibliotheek / Archief</Link>
       </nav>}
     </header>
     {children}
