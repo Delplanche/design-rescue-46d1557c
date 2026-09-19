@@ -22,8 +22,15 @@ function ResearchDetail() {
   const index = researchPillars.findIndex((item) => item.slug === pillar.slug);
   const previous = researchPillars[index - 1];
   const next = researchPillars[index + 1];
+  const blueprint = bookBlueprints[pillar.slug];
   return <EditorialPage kind="Onderzoek" title={pillar.title} deck={pillar.deck}>
     <aside className="evidence-note"><strong>Bewijsbasis</strong><p>{pillar.evidence}</p></aside>
+    {blueprint && <section className="book-blueprint">
+      <SectionLabel>Wat staat er in dit boek</SectionLabel>
+      <p className="blueprint-theme">Thema · {blueprint.theme}</p>
+      <ul>{blueprint.contents.map((item) => <li key={item}>{item}</li>)}</ul>
+      <a className="download-link" href={blueprint.pdfPath} download>Download {pillar.book} als PDF <ArrowDownToLine /></a>
+    </section>}
     <section className="prose-sections"><SectionLabel>{pillar.book} · Pijler {pillar.number}</SectionLabel>{pillar.sections.map((section, sectionIndex) => <div key={section.heading}><code>0{sectionIndex + 1}</code><h2>{section.heading}</h2><p>{section.body}</p></div>)}</section>
     <nav className="pillar-nav">{previous ? <Link to="/onderzoek/$slug" params={{ slug: previous.slug }}><ArrowLeft /><span><small>Vorige pijler</small>{previous.shortTitle}</span></Link> : <Link to="/onderzoek"><ArrowLeft /><span><small>Overzicht</small>Onderzoek</span></Link>}{next ? <Link to="/onderzoek/$slug" params={{ slug: next.slug }}><span><small>Volgende pijler</small>{next.shortTitle}</span><ArrowRight /></Link> : <Link to="/archief"><span><small>Verder</small>Bibliotheek</span><ArrowRight /></Link>}</nav>
   </EditorialPage>;
