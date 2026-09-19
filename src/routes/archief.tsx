@@ -3,7 +3,7 @@ import { ArrowDownToLine, ArrowRight, Search } from "lucide-react";
 import { EditorialPage, SectionLabel } from "@/components/editorial-page";
 import { getPublications, formatPublicationDate, matchesQuery, type Publication } from "@/lib/publications.functions";
 
-type ArchiveSearch = { q: string; categorie: string };
+type ArchiveSearch = { q?: string; categorie?: string };
 
 export const Route = createFileRoute("/archief")({
   validateSearch: (search: Record<string, unknown>): ArchiveSearch => ({
