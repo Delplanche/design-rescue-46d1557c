@@ -44,7 +44,6 @@ function PublicationCard({ publication }: { publication: Publication }) {
 }
 
 function ArchivePage() {
-  const publications = Route.useLoaderData();
   const search = Route.useSearch();
   const q = search.q ?? "";
   const categorie = search.categorie ?? "";
