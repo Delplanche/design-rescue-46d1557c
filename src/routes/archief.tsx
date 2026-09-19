@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ArrowDownToLine, ArrowRight, Search } from "lucide-react";
 import { EditorialPage, SectionLabel } from "@/components/editorial-page";
-import { getPublications, formatPublicationDate, matchesQuery, type Publication } from "@/lib/publications.functions";
+import { publications, formatPublicationDate, matchesQuery, type Publication } from "@/lib/publications";
 
 type ArchiveSearch = { q?: string; categorie?: string };
 
@@ -10,7 +10,6 @@ export const Route = createFileRoute("/archief")({
     q: typeof search["q"] === "string" ? search["q"].slice(0, 120) : "",
     categorie: typeof search["categorie"] === "string" ? search["categorie"].slice(0, 40) : "",
   }),
-  loader: () => getPublications(),
   head: () => ({ meta: [
     { title: "Bibliotheek — De Marktplaats van de Ziel" },
     { name: "description", content: "Doorzoek en download de pers-whitepaper en de zes boeken van de Hexalogie." },
