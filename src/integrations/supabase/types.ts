@@ -17,6 +17,7 @@ export type Database = {
       publications: {
         Row: {
           audience: string
+          category: string
           code: string
           created_at: string
           description: string
@@ -24,15 +25,19 @@ export type Database = {
           format: string
           id: string
           is_published: boolean
+          keywords: string[]
           kind: string
           page_count: number
           pdf_path: string
+          published_on: string
           sort_order: number
+          subtitle: string
           title: string
           updated_at: string
         }
         Insert: {
           audience: string
+          category?: string
           code: string
           created_at?: string
           description: string
@@ -40,15 +45,19 @@ export type Database = {
           format: string
           id?: string
           is_published?: boolean
+          keywords?: string[]
           kind: string
           page_count: number
           pdf_path: string
+          published_on?: string
           sort_order: number
+          subtitle?: string
           title: string
           updated_at?: string
         }
         Update: {
           audience?: string
+          category?: string
           code?: string
           created_at?: string
           description?: string
@@ -56,10 +65,13 @@ export type Database = {
           format?: string
           id?: string
           is_published?: boolean
+          keywords?: string[]
           kind?: string
           page_count?: number
           pdf_path?: string
+          published_on?: string
           sort_order?: number
+          subtitle?: string
           title?: string
           updated_at?: string
         }
