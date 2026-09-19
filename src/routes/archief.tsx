@@ -46,7 +46,9 @@ function PublicationCard({ publication }: { publication: Publication }) {
 
 function ArchivePage() {
   const publications = Route.useLoaderData();
-  const { q, categorie } = Route.useSearch();
+  const search = Route.useSearch();
+  const q = search.q ?? "";
+  const categorie = search.categorie ?? "";
   const navigate = useNavigate({ from: "/archief" });
   const setSearch = (next: Partial<ArchiveSearch>) =>
     navigate({ search: (prev) => ({ ...prev, ...next }), replace: true });
