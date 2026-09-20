@@ -350,3 +350,18 @@ code { font-family: var(--font-mono); }
 .nav-link-accent{color:var(--foreground)}
 .mobile-nav .mobile-sub{padding-left:1rem;font-size:.82rem;color:var(--muted-foreground)}
 .mobile-nav .mobile-sub code{font-family:var(--font-mono);font-size:.6rem;margin-right:.4rem}
+/* ── Institutionele voettekst · record 2026 ─────────────────────── */
+.footer-kicker{font-family:var(--font-mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.18em;color:color-mix(in oklab,var(--background) 52%,transparent)}
+.footer-title{max-width:22rem;margin:1rem 0;font-family:var(--font-serif);font-size:clamp(2.4rem,4vw,4.25rem);line-height:.88}
+.footer-project>p:last-child{max-width:23rem;font-size:.8rem;line-height:1.7;color:color-mix(in oklab,var(--background) 62%,transparent)}
+.footer-sitemap{display:grid;grid-template-columns:1fr 1fr;align-content:start;column-gap:2rem}
+.footer-sitemap .footer-kicker{grid-column:1/-1;margin-bottom:.4rem}
+.footer-sitemap a{display:flex;align-items:center;padding:.7rem 0;border-bottom:1px solid color-mix(in oklab,var(--background) 10%,transparent);font-size:.78rem;color:color-mix(in oklab,var(--background) 72%,transparent);transition:color .18s ease}
+.footer-sitemap a:hover{color:var(--background)}
+.footer-colophon{display:grid;align-content:start}
+.colophon-author{margin:.9rem 0 1.8rem;font-family:var(--font-serif);font-size:1.3rem;color:color-mix(in oklab,var(--background) 88%,transparent)}
+.colophon-platform{display:flex;align-items:center;gap:.6rem;padding-top:1.1rem;border-top:1px solid color-mix(in oklab,var(--background) 10%,transparent);font-size:.78rem;color:color-mix(in oklab,var(--background) 66%,transparent);transition:color .18s ease}
+.colophon-platform:hover{color:var(--background)}
+.colophon-platform svg{width:.72rem;height:.72rem;flex:none}
+.footer-base{display:block;max-width:85rem;margin:4.5rem auto 0;padding-top:1.4rem;border-top:1px solid color-mix(in oklab,var(--background) 12%,transparent);font-family:var(--font-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:color-mix(in oklab,var(--background) 46%,transparent)}
+@media(max-width:767px){.colophon-author{margin-bottom:1.2rem}.footer-base{margin-top:3rem;padding-top:1.2rem;letter-spacing:.08em}}
