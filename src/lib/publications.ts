@@ -143,7 +143,67 @@ export const publications: readonly Publication[] = [
     published_on: "2026-09-19",
     keywords: ["de-programmering", "sanering", "amnestie", "analoog", "gemeenschap", "herstel"],
   },
+  {
+    id: "integraal-dossier",
+    sort_order: 8,
+    code: "ID",
+    kind: "INTEGRAAL DOSSIER",
+    title: "Integraal Dossier — Editie 01 (21 × 21)",
+    subtitle: "De volledige systeemanalyse in één opgemaakte uitgave",
+    description:
+      "Het gebundelde dossier: alle onderzoekslijnen, tabellen en het bronregister in één doorlopende, opgemaakte uitgave voor e-reader of tablet.",
+    category: "Uitgave",
+    format: "21 × 21 cm",
+    audience: "Onderzoek · pers · beleid",
+    page_count: 8,
+    file_size: "20 kB",
+    pdf_path: "/publicaties/integraal-dossier-editie-01-21x21.pdf",
+    published_on: "2026-09-19",
+    keywords: ["integraal", "dossier", "editie 01", "volledig", "bundel", "21x21"],
+  },
+  {
+    id: "executive-summary",
+    sort_order: 9,
+    code: "ES",
+    kind: "EXECUTIVE SUMMARY",
+    title: "Executive Summary (A4)",
+    subtitle: "Kernbevindingen en modelwetgeving in beknopte vorm",
+    description:
+      "De beknopte leesversie voor redacties, beleidsmakers en toezichthouders: bevindingen, bewijsgrenzen en het voorstel Lex Humanitas Digitalis.",
+    category: "Uitgave",
+    format: "A4",
+    audience: "Pers · beleid · toezicht",
+    page_count: 1,
+    file_size: "12 kB",
+    pdf_path: "/publicaties/executive-summary-a4.pdf",
+    published_on: "2026-09-19",
+    keywords: ["executive summary", "samenvatting", "beleid", "pers", "kernbevindingen"],
+  },
+  {
+    id: "boek-reader",
+    sort_order: 10,
+    code: "BR",
+    kind: "BOEK-READER",
+    title: "Boek-Reader — Commodificatie van de Ziel (21 × 21)",
+    subtitle: "Doorlopende leesversie van de hexalogie",
+    description:
+      "De leesuitgave met de doorlopende argumentatielijn van Boek I tot VI, geoptimaliseerd voor rustig lezen op tablet of e-reader.",
+    category: "Uitgave",
+    format: "21 × 21 cm",
+    audience: "Algemeen · onderzoek",
+    page_count: 2,
+    file_size: "12 kB",
+    pdf_path: "/publicaties/boek-reader-commodificatie-van-de-ziel-21x21.pdf",
+    published_on: "2026-09-19",
+    keywords: ["reader", "leesversie", "commodificatie", "hexalogie", "doorlopend"],
+  },
 ];
+
+export function publicationSection(publication: Publication): "pers" | "hexalogie" | "uitgave" {
+  if (publication.id === "wp") return "pers";
+  if (publication.id.startsWith("boek-0")) return "hexalogie";
+  return "uitgave";
+}
 
 export function formatPublicationDate(value: string) {
   const date = new Date(`${value}T00:00:00Z`);
