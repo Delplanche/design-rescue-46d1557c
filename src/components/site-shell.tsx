@@ -25,6 +25,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             </div>
           </div>
           <Link to="/archief" className="nav-link nav-link-accent">Bibliotheek / Archief</Link>
+          <Link to="/editie" className="nav-link">Onderzoekseditie</Link>
         </nav>
         <Button variant="ghost" size="icon" className="menu-button" onClick={() => setOpen(!open)} aria-label={open ? "Menu sluiten" : "Menu openen"}>{open ? <X/> : <Menu/>}</Button>
       </div>
@@ -37,6 +38,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           </Link>
         ))}
         <Link to="/archief" onClick={() => setOpen(false)}>Bibliotheek / Archief</Link>
+        <Link to="/editie" onClick={() => setOpen(false)}>Onderzoekseditie</Link>
       </nav>}
     </header>
     {children}
@@ -49,16 +51,18 @@ export function SiteShell({ children }: { children: ReactNode }) {
         </section>
         <nav className="footer-sitemap" aria-label="Sitemap">
           <p className="footer-kicker">Documentatie</p>
-          <Link to="/">Manifest</Link><Link to="/onderzoek">Onderzoek</Link><Link to="/archief">Bibliotheek</Link>
+          <Link to="/">Manifest</Link><Link to="/onderzoek">Onderzoek</Link>
+          <Link to="/editie">Onderzoekseditie</Link><Link to="/archief">Bibliotheek</Link>
           <Link to="/juridisch">Juridisch</Link><Link to="/claims">Claimregister</Link>
           <Link to="/bronnen">Bronnen</Link><Link to="/methodologie">Methode & correcties</Link>
         </nav>
         <section className="footer-colophon">
           <p className="footer-kicker">Colofon</p>
-          <dl><div><dt>Auteur</dt><dd>Jona Zeno De Smet</dd></div><div><dt>Architectuur & Platform</dt><dd><a href="https://delplanche.com" target="_blank" rel="noreferrer">Delplanche <ArrowUpRight/></a><a href="https://delplanche.cloud" target="_blank" rel="noreferrer">delplanche.cloud <ArrowUpRight/></a></dd></div></dl>
+          <p className="colophon-author">Jona Zeno De Smet</p>
+          <a className="colophon-platform" href="https://delplanche.cloud" target="_blank" rel="noreferrer">Architectuur & Platform door Delplanche <ArrowUpRight/></a>
         </section>
       </div>
-      <div className="footer-base"><span>© 2026 — Publiek archief voor controle en debat</span><span>Vrij verspreidbaar voor educatieve en onderzoeksdoeleinden</span></div>
+      <div className="footer-base"><p>© 2026 · Publiek archief voor controle en debat. Vrij verspreidbaar voor educatieve en onderzoeksdoeleinden.</p></div>
     </footer>
   </div>;
 }

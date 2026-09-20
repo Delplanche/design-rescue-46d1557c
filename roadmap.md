@@ -8,6 +8,6 @@
 - [x] Speculatieve uitstervingskaders volledig uit site en Boek IV verwijderen
 - [x] De zeven PDF’s opnieuw genereren en inhoudelijk controleren
 - [x] Downloadroute, mobiele weergave en registers controleren
-- [ ] Onderzoekseditie 4.0: 7 hoofdstukken als leesomgeving met vaste zijbalk
-- [ ] Bronregister W01–W26 als doorzoekbare tabel
-- [ ] Nieuw geüploade PDF-versies vergelijken en beste versie koppelen
+- [x] Onderzoekseditie 4.0: 7 hoofdstukken als leesomgeving met vaste zijbalk (menu- en voettekstlink live)
+- [x] Bronregister W01–W26 als doorzoekbare tabel
+- [x] Nieuw geüploade PDF-versies vergeleken: alle vervangingsversies (2–8 p.) zijn kleiner dan de huidige boek-PDF's (15–25 p.); huidige bestanden blijven staan tot de InDesign-uitgaven klaar zijn
