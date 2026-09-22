@@ -22,6 +22,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
                   <code>{pillar.number}</code><span>{pillar.title}</span>
                 </Link>
               ))}
+              <Link to="/editie" role="menuitem">
+                <code>07</code><span>Integraal overzicht · Onderzoekseditie</span>
+              </Link>
             </div>
           </div>
           <Link to="/archief" className="nav-link nav-link-accent">Bibliotheek / Archief</Link>
@@ -37,6 +40,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <code>{pillar.number}</code> {pillar.title}
           </Link>
         ))}
+        <Link to="/editie" onClick={() => setOpen(false)} className="mobile-sub"><code>07</code> Integraal overzicht</Link>
         <Link to="/archief" onClick={() => setOpen(false)}>Bibliotheek / Archief</Link>
         <Link to="/editie" onClick={() => setOpen(false)}>Onderzoekseditie</Link>
       </nav>}
