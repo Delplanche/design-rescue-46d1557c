@@ -98,6 +98,11 @@ function ArchivePage() {
       <div className="publication-ledger">{books.map((publication) => <PublicationCard key={publication.id} publication={publication} />)}</div>
     </section>}
 
+    {editions.length > 0 && <section>
+      <SectionLabel>Integrale uitgaven · dossier, summary en reader</SectionLabel>
+      <div className="publication-ledger">{editions.map((publication) => <PublicationCard key={publication.id} publication={publication} />)}</div>
+    </section>}
+
     <section>
       <SectionLabel>Openbare registers</SectionLabel>
       <nav className="archive-links">
