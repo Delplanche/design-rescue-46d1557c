@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ArrowDownToLine, ArrowRight, Search } from "lucide-react";
 import { EditorialPage, SectionLabel } from "@/components/editorial-page";
-import { publications, formatPublicationDate, matchesQuery, type Publication } from "@/lib/publications";
+import { publications, formatPublicationDate, matchesQuery, publicationSection, type Publication } from "@/lib/publications";
 
 type ArchiveSearch = { q?: string; categorie?: string };
 
@@ -55,8 +55,9 @@ function ArchivePage() {
   const activeCategory = categories.includes(categorie) ? categorie : "";
   const filtered = publications.filter((item) =>
     matchesQuery(item, q) && (!activeCategory || item.category === activeCategory));
-  const press = filtered.filter((item) => item.kind.toLowerCase().includes("whitepaper"));
-  const books = filtered.filter((item) => !item.kind.toLowerCase().includes("whitepaper"));
+  const press = filtered.filter((item) => publicationSection(item) === "pers");
+  const books = filtered.filter((item) => publicationSection(item) === "hexalogie");
+  const editions = filtered.filter((item) => publicationSection(item) === "uitgave");
 
   return <EditorialPage kind="Archief" title="De Bibliotheek" deck="Eén pers-whitepaper en zes onderzoeksboeken. Dit is de enige officiële downloadplek.">
     <section>
