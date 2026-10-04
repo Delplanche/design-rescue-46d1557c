@@ -159,7 +159,7 @@ html.theme-ready body, html.theme-ready body * {
 @media (prefers-reduced-motion: reduce) {
   html.theme-ready body, html.theme-ready body * { transition: none; }
 }
-.theme-toggle{display:inline-flex;gap:2px;padding:2px;border:1px solid var(--glass-line);border-radius:999px}
+.theme-toggle{display:inline-flex;justify-self:end;width:max-content;gap:2px;padding:2px;border:1px solid var(--glass-line);border-radius:999px}
 .theme-toggle button{display:grid;place-items:center;width:1.75rem;height:1.75rem;border-radius:999px;color:var(--muted-foreground)}
 .theme-toggle button svg{width:.85rem;height:.85rem}
 .theme-toggle button[aria-pressed="true"]{background:var(--foreground);color:var(--background)}
