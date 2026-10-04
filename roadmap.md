@@ -14,3 +14,7 @@
 - [x] Derde bibliotheeksectie "Integrale uitgaven" (integraal dossier, executive summary, boek-reader)
 - [x] Menu "Onderzoek" verwijst ook naar het integrale overzicht (Onderzoekseditie)
 - [ ] Definitieve InDesign-PDF's (40–60 p.) vervangen in public/publicaties — wacht op de bestanden
+- [x] Themaknop licht/donker/systeem in beide headers
+- [x] Auteursnaam uit colofon; bronregister in footer; dubbele menulink weg
+- [x] Forensisch: IP-discrepanties expliciet, LLM 6 stappen, MCC-bewijsspoor
+- [ ] Volledige Engelse editie (/en/...) — volgende stap
