@@ -3,6 +3,7 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { researchPillars } from "@/lib/research-content";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function SiteShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -28,9 +29,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
             </div>
           </div>
           <Link to="/archief" className="nav-link nav-link-accent">Bibliotheek / Archief</Link>
-          <Link to="/editie" className="nav-link">Onderzoekseditie</Link>
         </nav>
-        <Button variant="ghost" size="icon" className="menu-button" onClick={() => setOpen(!open)} aria-label={open ? "Menu sluiten" : "Menu openen"}>{open ? <X/> : <Menu/>}</Button>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Button variant="ghost" size="icon" className="menu-button" onClick={() => setOpen(!open)} aria-label={open ? "Menu sluiten" : "Menu openen"}>{open ? <X/> : <Menu/>}</Button>
+        </div>
       </div>
       {open && <nav className="mobile-nav" aria-label="Mobiele navigatie">
         <Link to="/" onClick={() => setOpen(false)}>Manifest</Link>
@@ -42,7 +45,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
         ))}
         <Link to="/editie" onClick={() => setOpen(false)} className="mobile-sub"><code>07</code> Integraal overzicht</Link>
         <Link to="/archief" onClick={() => setOpen(false)}>Bibliotheek / Archief</Link>
-        <Link to="/editie" onClick={() => setOpen(false)}>Onderzoekseditie</Link>
       </nav>}
     </header>
     {children}
@@ -58,11 +60,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <Link to="/">Manifest</Link><Link to="/onderzoek">Onderzoek</Link>
           <Link to="/editie">Onderzoekseditie</Link><Link to="/archief">Bibliotheek</Link>
           <Link to="/juridisch">Juridisch</Link><Link to="/claims">Claimregister</Link>
-          <Link to="/bronnen">Bronnen</Link><Link to="/methodologie">Methode & correcties</Link>
+          <Link to="/bronnen">Bronnen</Link><Link to="/editie/bronregister">Bronregister W01–W26</Link>
+          <Link to="/methodologie">Methode & correcties</Link>
         </nav>
         <section className="footer-colophon">
           <p className="footer-kicker">Colofon</p>
-          <p className="colophon-author">Jona Zeno De Smet</p>
           <a className="colophon-platform" href="https://delplanche.cloud" target="_blank" rel="noreferrer">Architectuur & Platform door Delplanche <ArrowUpRight/></a>
         </section>
       </div>

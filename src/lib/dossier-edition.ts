@@ -1936,7 +1936,7 @@ export const dossierChapters: DossierChapter[] = [
         "blocks": [
           {
             "type": "para",
-            "text": "Een generiek systeem kan bestaan uit intake, contextopbouw, retrieval uit CRM, promptconstructie, modelgeneratie, menselijke review en verzending. Niet elk systeem heeft alle stappen en de volgorde kan verschillen."
+            "text": "Een generiek systeem kan worden beschreven in zes controleerbare stappen: (1) intake en contextopbouw, (2) retrieval uit CRM, (3) promptconstructie, (4) modelgeneratie, (5) menselijke review en (6) verzending. De menselijke verantwoordelijkheid voor review en verzending blijft daarbij volledig. Niet elk systeem heeft alle stappen en de volgorde kan verschillen."
           },
           {
             "type": "para",
