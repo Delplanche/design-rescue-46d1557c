@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { BookOpen, Library, Menu, ShieldCheck, Table2, X } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { useState, type ReactNode } from "react";
 import { dossierChapters, editionLabel } from "@/lib/dossier-edition";
 
@@ -95,7 +96,7 @@ export function EditionShell({ children }: { children: ReactNode }) {
 
       <div className="lg:pl-[19rem]">
         <header className="sticky top-0 z-20 border-b border-zinc-800 bg-zinc-950/90 backdrop-blur">
-          <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-8">
+          <div className="grid grid-cols-[auto_minmax(0,1fr)_auto_auto] items-center gap-3 px-4 py-3 sm:px-8">
             <button
               type="button"
               onClick={() => setMenuOpen(true)}
@@ -116,6 +117,7 @@ export function EditionShell({ children }: { children: ReactNode }) {
                 <span className="hidden sm:inline">· 7 delen · 26 bronnen</span>
               </p>
             </div>
+            <ThemeToggle />
             <button
               type="button"
               onClick={() => setNotesOpen(!notesOpen)}

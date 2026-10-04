@@ -346,7 +346,7 @@ export const dossierChapters: DossierChapter[] = [
         "blocks": [
           {
             "type": "para",
-            "text": "Stap A: preserveer het bronbestand onveranderd en maak een cryptografische hash. Stap B: noteer datum, bron, verkrijgingswijze en eventuele toestemming. Stap C: maak een tijdlijn van account-, chat-, betalings- en personeelsgebeurtenissen. Stap D: vergelijk identiteit, IP, device, loginrol en verzendmomenten. Stap E: koppel ieder feit aan een bron-ID."
+            "text": "Stap A: preserveer het bronbestand onveranderd en maak een cryptografische hash. Stap B: noteer datum, bron, verkrijgingswijze en eventuele toestemming. Stap C: maak een tijdlijn van account-, chat-, betalings- en personeelsgebeurtenissen. Stap D (IP-discrepanties): vergelijk identiteit, IP, device, loginrol en verzendmomenten. Stap E: koppel ieder feit aan een bron-ID."
           },
           {
             "type": "para",
@@ -845,7 +845,7 @@ export const dossierChapters: DossierChapter[] = [
         "blocks": [
           {
             "type": "para",
-            "text": "Stap A: preserveer het bronbestand onveranderd en maak een cryptografische hash. Stap B: noteer datum, bron, verkrijgingswijze en eventuele toestemming. Stap C: maak een tijdlijn van account-, chat-, betalings- en personeelsgebeurtenissen. Stap D: vergelijk identiteit, IP, device, loginrol en verzendmomenten. Stap E: koppel ieder feit aan een bron-ID."
+            "text": "Stap A: preserveer het bronbestand onveranderd en maak een cryptografische hash. Stap B: noteer datum, bron, verkrijgingswijze en eventuele toestemming. Stap C: maak een tijdlijn van account-, chat-, betalings- en personeelsgebeurtenissen. Stap D (IP-discrepanties): vergelijk identiteit, IP, device, loginrol en verzendmomenten. Stap E: koppel ieder feit aan een bron-ID."
           },
           {
             "type": "para",
@@ -1014,6 +1014,56 @@ export const dossierChapters: DossierChapter[] = [
     "subtitle": "Microtransacties, cardinghypotheses, PSP-structuren en offshore lagen",
     "kicker": "Economie · Betalingen · Offshore",
     "sections": [
+{
+  "number": "96",
+  "title": "MCC-misbruik en misclassificatie — afzonderlijk financieel bewijsspoor",
+  "lead": "Merchant Category Codes (MCC) bepalen hoe een betaling bij kaartnetwerken en banken wordt gecategoriseerd; een onjuiste of misleidende code kan risicotoezicht en blokkades omzeilen.",
+  "blocks": [
+    {
+      "type": "para",
+      "text": "Vaststelling: MCC's zijn door kaartnetwerken gedefinieerde categorieën die het risicoprofiel, de toegestane verwerking en de monitoring van een transactie mede bepalen. Diensten voor betaalde digitale intimiteit vallen doorgaans onder hoogrisicocategorieën met strengere registratie- en monitoringvereisten."
+    },
+    {
+      "type": "para",
+      "text": "Hypothese: betalingen kunnen via tussenpartijen, wederverkopers of generieke codes (bijvoorbeeld digitale goederen, software of abonnementen) zo worden geclassificeerd dat de werkelijke aard van de dienst minder zichtbaar is voor de uitgevende bank of de kaarthouder. Dit dossier stelt niet vast dat een specifiek platform of agentschap dit doet."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Indicator",
+        "Status",
+        "Vereiste primaire documentatie"
+      ],
+      "rows": [
+        [
+          "Afwijking tussen MCC op afschrift en feitelijke dienst",
+          "Hypothese",
+          "Kaartafschriften, acquirer-gegevens, merchant-descriptor"
+        ],
+        [
+          "Betaling via tussenliggende wederverkoper of PSP",
+          "Te verifiëren",
+          "Contracten tussen platform, PSP en acquirer"
+        ],
+        [
+          "Herhaalde wijziging van merchant-descriptor",
+          "Te verifiëren",
+          "Tijdreeks van transacties en descriptors"
+        ],
+        [
+          "Chargebacks met omschrijving 'onbekende dienst'",
+          "Indicator, geen bewijs",
+          "Chargebackdossiers en redencodes"
+        ]
+      ]
+    },
+    {
+      "type": "callout",
+      "label": "METHODOLOGISCH ONDERSCHEID",
+      "text": "Een afwijkende MCC is geen bewijs van witwassen of fraude. Pas wanneer primaire documentatie (afschriften, acquirercontracten, descriptorhistoriek) een systematische misclassificatie aantoont, kan van misbruik worden gesproken."
+    }
+  ]
+},
       {
         "number": "01",
         "title": "De geldstroom als tweede ruggengraat",
@@ -1345,7 +1395,7 @@ export const dossierChapters: DossierChapter[] = [
         "blocks": [
           {
             "type": "para",
-            "text": "Stap A: preserveer het bronbestand onveranderd en maak een cryptografische hash. Stap B: noteer datum, bron, verkrijgingswijze en eventuele toestemming. Stap C: maak een tijdlijn van account-, chat-, betalings- en personeelsgebeurtenissen. Stap D: vergelijk identiteit, IP, device, loginrol en verzendmomenten. Stap E: koppel ieder feit aan een bron-ID."
+            "text": "Stap A: preserveer het bronbestand onveranderd en maak een cryptografische hash. Stap B: noteer datum, bron, verkrijgingswijze en eventuele toestemming. Stap C: maak een tijdlijn van account-, chat-, betalings- en personeelsgebeurtenissen. Stap D (IP-discrepanties): vergelijk identiteit, IP, device, loginrol en verzendmomenten. Stap E: koppel ieder feit aan een bron-ID."
           },
           {
             "type": "para",
@@ -1818,7 +1868,7 @@ export const dossierChapters: DossierChapter[] = [
         "blocks": [
           {
             "type": "para",
-            "text": "Stap A: preserveer het bronbestand onveranderd en maak een cryptografische hash. Stap B: noteer datum, bron, verkrijgingswijze en eventuele toestemming. Stap C: maak een tijdlijn van account-, chat-, betalings- en personeelsgebeurtenissen. Stap D: vergelijk identiteit, IP, device, loginrol en verzendmomenten. Stap E: koppel ieder feit aan een bron-ID."
+            "text": "Stap A: preserveer het bronbestand onveranderd en maak een cryptografische hash. Stap B: noteer datum, bron, verkrijgingswijze en eventuele toestemming. Stap C: maak een tijdlijn van account-, chat-, betalings- en personeelsgebeurtenissen. Stap D (IP-discrepanties): vergelijk identiteit, IP, device, loginrol en verzendmomenten. Stap E: koppel ieder feit aan een bron-ID."
           },
           {
             "type": "para",
@@ -1936,7 +1986,7 @@ export const dossierChapters: DossierChapter[] = [
         "blocks": [
           {
             "type": "para",
-            "text": "Een generiek systeem kan bestaan uit intake, contextopbouw, retrieval uit CRM, promptconstructie, modelgeneratie, menselijke review en verzending. Niet elk systeem heeft alle stappen en de volgorde kan verschillen."
+            "text": "Een generiek systeem kan worden beschreven in zes controleerbare stappen: (1) intake en contextopbouw, (2) retrieval uit CRM, (3) promptconstructie, (4) modelgeneratie, (5) menselijke review en (6) verzending. De menselijke verantwoordelijkheid voor review en verzending blijft daarbij volledig. Niet elk systeem heeft alle stappen en de volgorde kan verschillen."
           },
           {
             "type": "para",
@@ -2291,7 +2341,7 @@ export const dossierChapters: DossierChapter[] = [
         "blocks": [
           {
             "type": "para",
-            "text": "Stap A: preserveer het bronbestand onveranderd en maak een cryptografische hash. Stap B: noteer datum, bron, verkrijgingswijze en eventuele toestemming. Stap C: maak een tijdlijn van account-, chat-, betalings- en personeelsgebeurtenissen. Stap D: vergelijk identiteit, IP, device, loginrol en verzendmomenten. Stap E: koppel ieder feit aan een bron-ID."
+            "text": "Stap A: preserveer het bronbestand onveranderd en maak een cryptografische hash. Stap B: noteer datum, bron, verkrijgingswijze en eventuele toestemming. Stap C: maak een tijdlijn van account-, chat-, betalings- en personeelsgebeurtenissen. Stap D (IP-discrepanties): vergelijk identiteit, IP, device, loginrol en verzendmomenten. Stap E: koppel ieder feit aan een bron-ID."
           },
           {
             "type": "para",
@@ -2801,7 +2851,7 @@ export const dossierChapters: DossierChapter[] = [
         "blocks": [
           {
             "type": "para",
-            "text": "Stap A: preserveer het bronbestand onveranderd en maak een cryptografische hash. Stap B: noteer datum, bron, verkrijgingswijze en eventuele toestemming. Stap C: maak een tijdlijn van account-, chat-, betalings- en personeelsgebeurtenissen. Stap D: vergelijk identiteit, IP, device, loginrol en verzendmomenten. Stap E: koppel ieder feit aan een bron-ID."
+            "text": "Stap A: preserveer het bronbestand onveranderd en maak een cryptografische hash. Stap B: noteer datum, bron, verkrijgingswijze en eventuele toestemming. Stap C: maak een tijdlijn van account-, chat-, betalings- en personeelsgebeurtenissen. Stap D (IP-discrepanties): vergelijk identiteit, IP, device, loginrol en verzendmomenten. Stap E: koppel ieder feit aan een bron-ID."
           },
           {
             "type": "para",
@@ -3312,7 +3362,7 @@ export const dossierChapters: DossierChapter[] = [
         "blocks": [
           {
             "type": "para",
-            "text": "Stap A: preserveer het bronbestand onveranderd en maak een cryptografische hash. Stap B: noteer datum, bron, verkrijgingswijze en eventuele toestemming. Stap C: maak een tijdlijn van account-, chat-, betalings- en personeelsgebeurtenissen. Stap D: vergelijk identiteit, IP, device, loginrol en verzendmomenten. Stap E: koppel ieder feit aan een bron-ID."
+            "text": "Stap A: preserveer het bronbestand onveranderd en maak een cryptografische hash. Stap B: noteer datum, bron, verkrijgingswijze en eventuele toestemming. Stap C: maak een tijdlijn van account-, chat-, betalings- en personeelsgebeurtenissen. Stap D (IP-discrepanties): vergelijk identiteit, IP, device, loginrol en verzendmomenten. Stap E: koppel ieder feit aan een bron-ID."
           },
           {
             "type": "para",
