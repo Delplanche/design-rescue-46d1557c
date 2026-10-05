@@ -101,7 +101,7 @@ function SourceRegistryPage() {
                   : "border-zinc-800 text-zinc-500 hover:text-zinc-200"
               }`}
             >
-              {t(g.label, groupsEn[g.key])}
+              {t(g.label, groupsEn[g.key] ?? g.label)}
             </button>
           ))}
         </div>
