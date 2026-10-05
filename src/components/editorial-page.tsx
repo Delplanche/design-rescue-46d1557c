@@ -1,3 +1,4 @@
+import { useT } from "@/lib/i18n";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteShell } from "@/components/site-shell";
@@ -15,12 +16,14 @@ export function EditorialPage({
   children: React.ReactNode;
   next?: { to: "/onderzoek" | "/juridisch" | "/archief" | "/claims"; label: string };
 }) {
+  const t = useT();
+  const kindEn = { Onderzoek: "Research", Essay: "Essay", Voorstel: "Proposal", Archief: "Archive" }[kind];
   return (
     <SiteShell>
       <main>
         <header className="editorial-hero">
           <div className="editorial-hero-inner">
-            <p className={`content-kind kind-${kind.toLowerCase()}`}>{kind}</p>
+            <p className={`content-kind kind-${kind.toLowerCase()}`}>{t(kind, kindEn)}</p>
             <h1>{title}</h1>
             <p className="editorial-deck">{deck}</p>
           </div>

@@ -1,6 +1,8 @@
+import { useT } from "@/lib/i18n";
+import { useContent } from "@/lib/content";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import { dossierChapters, editionDate, sourceRegistry } from "@/lib/dossier-edition";
+import { editionDate } from "@/lib/dossier-edition";
 
 export const Route = createFileRoute("/editie/")({
   head: () => ({
@@ -23,28 +25,28 @@ export const Route = createFileRoute("/editie/")({
 });
 
 function EditionIndex() {
+  const t = useT();
+  const { dossierChapters, sourceRegistry } = useContent();
+  const date = t(editionDate, "19 September 2026");
   return (
     <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 lg:py-24">
       <p className="font-mono text-[0.68rem] uppercase tracking-[0.3em] text-zinc-600">
-        Onderzoekseditie 4.0 · {editionDate}
+        {t("Onderzoekseditie", "Research Edition")} 4.0 · {date}
       </p>
       <h1 className="mt-6 font-serif text-[2.75rem] leading-[1.05] text-zinc-50 sm:text-[4rem]">
-        De Marktplaats
+        {t("De Marktplaats", "The Marketplace")}
         <br />
-        van de Ziel
+        {t("van de Ziel", "of the Soul")}
       </h1>
       <p className="mt-8 max-w-2xl text-[1.05rem] leading-[1.8] text-zinc-400">
-        Een forensische reconstructie van gecommercialiseerde intimiteit: van de filosofische
-        macro-context tot de operationele achterkant, de financiële ketens, de AI-pipelines, de
-        sociale gevolgen en het juridische antwoord. Elk deel scheidt bronclaim, verificatie,
-        inferentie en hypothese.
+        {t("Een forensische reconstructie van gecommercialiseerde intimiteit: van de filosofische macro-context tot de operationele achterkant, de financiële ketens, de AI-pipelines, de sociale gevolgen en het juridische antwoord. Elk deel scheidt bronclaim, verificatie, inferentie en hypothese.", "A forensic reconstruction of commercialised intimacy: from the philosophical macro-context to the operational back end, the financial chains, the AI pipelines, the social consequences and the legal response. Each part separates source claim, verification, inference and hypothesis.")}
       </p>
 
       <dl className="mt-12 grid gap-px border border-zinc-800 bg-zinc-800 sm:grid-cols-3">
         {[
-          ["Delen", String(dossierChapters.length)],
-          ["Bronregister", `${sourceRegistry.length} items`],
-          ["Broncontrole", editionDate],
+          [t("Delen", "Parts"), String(dossierChapters.length)],
+          [t("Bronregister", "Source registry"), `${sourceRegistry.length} items`],
+          [t("Broncontrole", "Source check"), date],
         ].map(([label, value]) => (
           <div key={label} className="bg-zinc-950 px-5 py-6">
             <dt className="font-mono text-[0.64rem] uppercase tracking-[0.2em] text-zinc-600">
