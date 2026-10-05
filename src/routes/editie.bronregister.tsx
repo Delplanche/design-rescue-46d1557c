@@ -118,7 +118,7 @@ function SourceRegistryPage() {
                 ID
               </th>
               <th className="px-4 py-3 font-mono text-[0.64rem] uppercase tracking-[0.16em] text-zinc-500">
-                Bron
+                {t("Bron", "Source")}
               </th>
               <th className="px-4 py-3 font-mono text-[0.64rem] uppercase tracking-[0.16em] text-zinc-500">
                 {t("Domein", "Domain")}
