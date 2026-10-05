@@ -1,7 +1,9 @@
+import { useT } from "@/lib/i18n";
+import { useContent } from "@/lib/content";
 import { createFileRoute } from "@tanstack/react-router";
 import { ExternalLink, Search } from "lucide-react";
 import { useMemo, useState } from "react";
-import { editionDate, sourceRegistry } from "@/lib/dossier-edition";
+import { editionDate } from "@/lib/dossier-edition";
 
 export const Route = createFileRoute("/editie/bronregister")({
   head: () => ({
@@ -30,6 +32,7 @@ function domainOf(url: string) {
   }
 }
 
+const groupsEn: Record<string, string> = { alle: "All", regelgeving: "Regulation", toezicht: "Supervision", software: "Software / CRM", journalistiek: "Journalism", data: "Data" };
 const groups = [
   { key: "alle", label: "Alle" },
   { key: "regelgeving", label: "Regelgeving" },
@@ -51,6 +54,8 @@ function groupOf(id: string) {
 function SourceRegistryPage() {
   const [query, setQuery] = useState("");
   const [group, setGroup] = useState<string>("alle");
+  const t = useT();
+  const { sourceRegistry } = useContent();
 
   const results = useMemo(() => {
     const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
@@ -59,30 +64,28 @@ function SourceRegistryPage() {
       const haystack = `${entry.id} ${entry.label} ${entry.url}`.toLowerCase();
       return terms.every((t) => haystack.includes(t));
     });
-  }, [query, group]);
+  }, [query, group, sourceRegistry]);
 
   return (
     <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 lg:py-20">
       <p className="font-mono text-[0.66rem] uppercase tracking-[0.28em] text-zinc-600">
-        Bronregister · webcontrole {editionDate}
+        {t("Bronregister · webcontrole", "Source registry · web check")} {t(editionDate, "19 September 2026")}
       </p>
       <h1 className="mt-5 font-serif text-[2.4rem] leading-tight text-zinc-50 sm:text-[3rem]">
         W01 – W26
       </h1>
       <p className="mt-5 max-w-2xl text-[1rem] leading-[1.8] text-zinc-400">
-        Alle openbare bronnen waarop deze editie steunt: Europese regelgeving en richtsnoeren,
-        toezichtsdocumentatie, publieke productdocumentatie van CRM-leveranciers, onderzoeks-
-        journalistiek en demografische data.
+        {t("Alle openbare bronnen waarop deze editie steunt: Europese regelgeving en richtsnoeren, toezichtsdocumentatie, publieke productdocumentatie van CRM-leveranciers, onderzoeksjournalistiek en demografische data.", "All public sources this edition relies on: European regulation and guidelines, supervisory documentation, public product documentation from CRM vendors, investigative journalism and demographic data.")}
       </p>
 
       <div className="mt-10 grid gap-4">
         <label className="relative block">
           <Search className="absolute left-4 top-1/2 size-4 -translate-y-1/2 text-zinc-600" />
-          <span className="sr-only">Zoek in het bronregister</span>
+          <span className="sr-only">{t("Zoek in het bronregister", "Search the source registry")}</span>
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Zoek op bron, instelling of trefwoord…"
+            placeholder={t("Zoek op bron, instelling of trefwoord…", "Search by source, institution or keyword…")}
             className="w-full border border-zinc-800 bg-zinc-900/50 py-3 pl-11 pr-4 text-sm text-zinc-100 placeholder:text-zinc-600 focus:border-zinc-600 focus:outline-none"
           />
         </label>
@@ -98,12 +101,12 @@ function SourceRegistryPage() {
                   : "border-zinc-800 text-zinc-500 hover:text-zinc-200"
               }`}
             >
-              {g.label}
+              {t(g.label, groupsEn[g.key])}
             </button>
           ))}
         </div>
         <p className="font-mono text-[0.66rem] uppercase tracking-[0.18em] text-zinc-600">
-          {results.length} van {sourceRegistry.length} bronnen
+          {results.length} {t("van", "of")} {sourceRegistry.length} {t("bronnen", "sources")}
         </p>
       </div>
 
@@ -118,7 +121,7 @@ function SourceRegistryPage() {
                 Bron
               </th>
               <th className="px-4 py-3 font-mono text-[0.64rem] uppercase tracking-[0.16em] text-zinc-500">
-                Domein
+                {t("Domein", "Domain")}
               </th>
               <th className="px-4 py-3 font-mono text-[0.64rem] uppercase tracking-[0.16em] text-zinc-500">
                 Link
@@ -142,7 +145,7 @@ function SourceRegistryPage() {
                     rel="noreferrer"
                     className="inline-flex items-center gap-1.5 text-sm text-zinc-400 underline-offset-4 hover:text-amber-100 hover:underline"
                   >
-                    Openen <ExternalLink className="size-3.5" />
+                    {t("Openen", "Open")} <ExternalLink className="size-3.5" />
                   </a>
                 </td>
               </tr>
@@ -151,7 +154,7 @@ function SourceRegistryPage() {
         </table>
         {results.length === 0 ? (
           <p className="px-4 py-10 text-center text-sm text-zinc-500">
-            Geen bronnen gevonden voor deze zoekopdracht.
+            {t("Geen bronnen gevonden voor deze zoekopdracht.", "No sources found for this search.")}
           </p>
         ) : null}
       </div>
